@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>{{ title }}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+	<div class='wrapper'>
+	<div class='header'>
+		<h1>{{ title }}</h1>
+	</div>
+	<hr/>
+	<div class='navigation'><ul>
+		<a href=""><li>View Tasks</li></a> |
+		<a href="/add"><li>Add Tasks</li></a> |
+		<a href="/delete"><li>Delete Tasks</li></a>
+	</ul>
+	<hr/>
+	</div>
+	<div class='content'>
+	<div class='form'>
+		<input type='text' id='txtTask' />
+		<input type='button' id='btnTask' value='Add Task'>
+	</div>
+	{% for tl in tsklst %}
+	<div class='disp' id='{{ tl.id }}'>
+		<div class='left'>{{ tl.task }}</div>
+		<input type='checkbox' class='chkbk' id='{{ tl.id }}' />
+	</div>
+	{% endfor %}
+	</div>
+	<div class='footer'></div>
+	</div>
+</body>
+</html>

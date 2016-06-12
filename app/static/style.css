@@ -1,0 +1,61 @@
+body,html,*{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+.wrapper{
+	width:70%;
+	margin:auto;
+	text-align:center;
+	background: red;
+	overflow: auto;
+}
+.header{
+	width:100%;
+}
+.navigation{
+	width:100%;
+	float:left;
+}
+.naviation ul{
+	list-style: none;
+}
+.navigation ul a li{
+	display: inline;
+}
+.navigation ul a{
+	text-decoration: none;
+}
+.content{
+	width:80%;
+	margin: auto;
+}
+.form{
+	width:100%;
+	float:left;
+}
+#txtTask{
+	width:70%;
+	float:left;
+}
+#btnTask{
+	width:25%;
+	float:right;
+}
+.disp{
+	width:100%;
+	float:left;
+}
+.left{
+	width:70%;
+	float:left;
+}
+.chkbk{
+	width:25%;
+	float:right;
+	background: blue;
+}
+.test{
+	width:100%;
+	background: red;
+}
