@@ -10,27 +10,36 @@
 	<div class='header'>
 		<h1>{{ title }}</h1>
 	</div>
-	<hr/>
-	<div class='navigation'><ul>
-		<a href=""><li>View Tasks</li></a> |
-		<a href="/add"><li>Add Tasks</li></a> |
-		<a href="/delete"><li>Delete Tasks</li></a>
-	</ul>
-	<hr/>
-	</div>
+	<hr class='outer'/>
 	<div class='content'>
 	<div class='form'>
-		<input type='text' id='txtTask' />
-		<input type='button' id='btnTask' value='Add Task'>
+		<input type='text' id='txtTask' placeholder="Task..."/>
+		<textarea id='txtDescription' placeholder="Description..."></textarea>
+		<input type='button' id='btnTask' />
 	</div>
+	<hr class='inner'/>
+	<div class='slider'>Add Task</div>
 	{% for tl in tsklst %}
 	<div class='disp' id='{{ tl.id }}'>
-		<div class='left'>{{ tl.task }}</div>
-		<input type='checkbox' class='chkbk' id='{{ tl.id }}' />
+		<input type='button' class='dele' id='{{ tl.id }}' />
+		<div class='data' id='{{ tl.id }}'>
+			<div class='left' id='{{ tl.id }}'>
+				<h2 id='{{ tl.id }}' class='h2'>{{ tl.task }}</h2>
+				<input type='text' class='txtTask' id='{{ tl.id }}' value='{{ tl.task }}' hidden/>
+			</div><br/>
+			<div class='right' id='{{ tl.id }}' ><p class='p' id='{{ tl.id }}'>{{ tl.description }}</p>
+			<textarea class='txtDesc' id='{{ tl.id }}' hidden>{{ tl.description }}</textarea></div>
+		</div>
+		<input type='button' class='edit' id='{{ tl.id }}' />
+		<input type='button' class='save' id='{{ tl.id }}' hidden/>
 	</div>
 	{% endfor %}
+
 	</div>
-	<div class='footer'></div>
-	</div>
+</div>
+<hr/> 	
+<div class='footer'>
+	&copy; 2016 by <a href="mailto:josf_yorobe@trendmicro.com" target="_top">Josf Yorobe</a> and <a href="mailto:joseph_zapues@trendmicro.com" target="_top">Joseph Zapues</a>
+</div>
 </body>
 </html>
